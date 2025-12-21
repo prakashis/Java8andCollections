@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class CountOccurenceOfNames {
+public class CountOccurenceOfNames { 
 
 	public static void main(String[] args) {
 		List<String> names=Arrays.asList("ramu","rowdy","raju","ramu","rowdy");
