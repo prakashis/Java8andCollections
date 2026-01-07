@@ -1,10 +1,9 @@
 package com.nit;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class FindDuplicates {
 
@@ -12,7 +11,7 @@ public class FindDuplicates {
 		
 		List<Integer> list = Arrays.asList(1,2,3,3,3,4,4,5);
 		
-		/*Set<Integer> seen=new HashSet<>();
+		Set<Integer> seen=new HashSet<>();
 		Set<Integer> duplicates=new HashSet<>();
 		
 		for(Integer num: list) {
@@ -21,15 +20,15 @@ public class FindDuplicates {
 			}
 		}
 		
-		System.out.println("duplicates: "+duplicates); */
+		System.out.println("duplicates: "+duplicates); 
 		
-		Set<Integer> moreThanOneElement = list.stream().collect(Collectors.groupingBy(e->e,Collectors.counting()))
-								.entrySet()
-								.stream()
-								.filter(e->e.getValue()>1)
-								.map(Map.Entry::getKey)
-								.collect(Collectors.toSet());
-		System.out.println("MoreThan One ELEMENT: "+moreThanOneElement);
+//		Set<Integer> moreThanOneElement = list.stream().collect(Collectors.groupingBy(e->e,Collectors.counting()))
+//								.entrySet()
+//								.stream()
+//								.filter(e->e.getValue()>1)
+//								.map(Map.Entry::getKey)
+//								.collect(Collectors.toSet());
+//		System.out.println("MoreThan One ELEMENT: "+moreThanOneElement);
 		/*
 		1. list.stream()                    // Creates stream: 1→2→3→3→3→4→4→5
 		2. .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
