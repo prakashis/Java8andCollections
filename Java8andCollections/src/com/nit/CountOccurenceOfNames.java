@@ -3,6 +3,8 @@ package com.nit;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CountOccurenceOfNames { 
 
@@ -16,7 +18,12 @@ public class CountOccurenceOfNames {
 		}
 		
 		System.out.println("hashMap: "+hashMap);
-			
+		
+		//by using streams
+		
+		Map<String, Long> collect = names.stream().collect(Collectors.groupingBy(e->e,Collectors.counting()));
+		
+		System.out.println("hashMap by using streams : "+collect);
 		
 
 	}
